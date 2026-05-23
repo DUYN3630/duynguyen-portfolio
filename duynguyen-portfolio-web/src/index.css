@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles */
+@layer base {
+  body {
+    @apply font-inter text-slate-900;
+  }
+}
+
+@layer components {
+  .nav-item {
+    @apply transition-all duration-200;
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .animate-slide-up {
+    transform: translateY(40px);
+  }
+  
+  .animate-slide-up.is-visible {
+    transform: translateY(0);
+  }
+
+  /* Floating Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .float-1 { animation: float 3s ease-in-out infinite; }
+  .float-2 { animation: float 4s ease-in-out infinite; }
+  .float-3 { animation: float 3.5s ease-in-out infinite; }
+  .float-4 { animation: float 4.5s ease-in-out infinite; }
+  
+  .typing-cursor::after {
+    content: '|';
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+}

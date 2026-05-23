@@ -1,0 +1,81 @@
+/* Sử dụng font Inter */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hiệu ứng con trỏ gõ chữ */
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: #4f46e5;
+    animation: blink 1s steps(1) infinite;
+    margin-left: 4px;
+    transform: translateY(4px);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Hiệu ứng "trôi nổi" cho icons */
+.float-1 { animation: float-1 6s ease-in-out infinite; }
+.float-2 { animation: float-2 7s ease-in-out infinite; }
+.float-3 { animation: float-3 8s ease-in-out infinite; }
+.float-4 { animation: float-4 5s ease-in-out infinite; }
+
+@keyframes float-1 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-10px, 10px); }
+    100% { transform: translate(0, 0); }
+}
+@keyframes float-2 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(10px, -10px); }
+    100% { transform: translate(0, 0); }
+}
+@keyframes float-3 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(5px, 15px); }
+    100% { transform: translate(0, 0); }
+}
+@keyframes float-4 {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-15px, -5px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Animation khi cuộn tới */
+.animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-drop {
+    transform: translateY(-30px);
+}
+.animate-slide-up {
+    transform: translateY(30px);
+}
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ✅ CSS MỚI CHO TESTIMONIAL MODAL (SECTION 7) */
+.modal {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ✅ CSS MỚI CHO CONTACT ME TEXTAREA (SECTION 8/9) */
+textarea::-webkit-scrollbar {
+    width: 6px;
+}
+textarea::-webkit-scrollbar-thumb {
+    background-color: #d1d5db; /* gray-400 */
+    border-radius: 3px;
+}
