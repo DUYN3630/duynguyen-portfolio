@@ -1,4 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { 
+  Code2, Home, Layout, BookOpen, Code, Mail, Menu, Check, 
+  Terminal, Atom, Zap, Server, Box, Activity, Lock, Shield, 
+  Sparkles, Database, Cloud, Cpu, ShoppingCart, Users, 
+  MessageSquare, Lightbulb, RefreshCw, Github, Send, 
+  CheckCircle, Figma, Image as ImageIcon, ChevronUp, X, 
+  Facebook, Instagram, Phone, MapPin, Palette, ShoppingBag
+} from 'lucide-react';
 
 const App = () => {
   const [activeNav, setActiveNav] = useState('hero');
@@ -11,29 +19,25 @@ const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [testimonials, setTestimonials] = useState([]);
   
-  // ĐỔI DÒNG NÀY THÀNH LINK RENDER CỦA BẠN:
-  // const API_URL = "http://localhost:5000/api";
-  const API_URL = "https://portfolio-backend-xxxx.onrender.com/api"; 
+  // URL Backend - Ưu tiên dùng biến môi trường, nếu không có mới dùng localhost
+  const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:5000/api"; 
 
   useEffect(() => {
-    // 1. Khởi tạo Lucide icons
-    if (window.lucide) {
-      window.lucide.createIcons();
-    }
-
-    // 2. Lấy danh sách đánh giá từ Backend
+    // 1. Lấy danh sách đánh giá từ Backend
     const fetchTestimonials = async () => {
       try {
         const response = await fetch(`${API_URL}/testimonials`);
-        const data = await response.json();
-        setTestimonials(data);
+        if (response.ok) {
+          const data = await response.json();
+          setTestimonials(data);
+        }
       } catch (error) {
         console.error("Lỗi lấy đánh giá:", error);
       }
     };
     fetchTestimonials();
 
-    // 3. Logic animation khi cuộn
+    // 2. Logic animation khi cuộn
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -46,7 +50,7 @@ const App = () => {
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
     elementsToAnimate.forEach(el => observer.observe(el));
 
-    // 4. Scroll listener
+    // 3. Scroll listener
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       setShowScrollTop(window.scrollY > 100);
@@ -68,14 +72,7 @@ const App = () => {
       window.removeEventListener('scroll', handleScroll);
       elementsToAnimate.forEach(el => observer.unobserve(el));
     };
-  }, []);
-
-  // Đảm bảo chạy lại lucide khi tab thay đổi
-  useEffect(() => {
-    if (window.lucide) {
-      window.lucide.createIcons();
-    }
-  }, [expTab, skillsTab, contactTab, projectFilter, testimonials]);
+  }, [API_URL]);
 
   const projects = [
     { 
@@ -99,7 +96,7 @@ const App = () => {
   const experiences = {
     work: [
       { 
-        icon: "shopping-bag", 
+        icon: ShoppingBag, 
         title: "Full-stack Developer", 
         company: "Nexus E-com (Personal Project)", 
         date: "Dec 2025 - Present", 
@@ -121,49 +118,49 @@ const App = () => {
   const skillsData = {
     technical: {
       languagesFrameworks: [
-        { name: "JavaScript / HTML / CSS", level: "Advanced", icon: "code" },
-        { name: "C#", level: "Advanced", icon: "terminal" },
-        { name: "ReactJS (Vite)", level: "Advanced", icon: "atom" },
-        { name: "Node.js / Express.js", level: "Advanced", icon: "zap" },
-        { name: "ASP.NET Core / MVC", level: "Advanced", icon: "server" },
-        { name: "WinForms", level: "Intermediate", icon: "layout" },
+        { name: "JavaScript / HTML / CSS", level: "Advanced", icon: Code },
+        { name: "C#", level: "Advanced", icon: Terminal },
+        { name: "ReactJS (Vite)", level: "Advanced", icon: Atom },
+        { name: "Node.js / Express.js", level: "Advanced", icon: Zap },
+        { name: "ASP.NET Core / MVC", level: "Advanced", icon: Server },
+        { name: "WinForms", level: "Intermediate", icon: Layout },
       ],
       librariesSecurity: [
-        { name: "Redux Toolkit / Mongoose", level: "Advanced", icon: "box" },
-        { name: "Framer Motion / Chart.js", level: "Advanced", icon: "activity" },
-        { name: "JWT / OAuth 2.0 / Firebase", level: "Advanced", icon: "lock" },
-        { name: "mongo-sanitize", level: "Advanced", icon: "shield" },
-        { name: "Google Gemini API", level: "Advanced", icon: "sparkles" },
+        { name: "Redux Toolkit / Mongoose", level: "Advanced", icon: Box },
+        { name: "Framer Motion / Chart.js", level: "Advanced", icon: Activity },
+        { name: "JWT / OAuth 2.0 / Firebase", level: "Advanced", icon: Lock },
+        { name: "mongo-sanitize", level: "Advanced", icon: Shield },
+        { name: "Google Gemini API", level: "Advanced", icon: Sparkles },
       ],
       databaseCloudArch: [
-        { name: "MongoDB / SQL Server", level: "Advanced", icon: "database" },
-        { name: "Vercel / Render / Azure", level: "Advanced", icon: "cloud" },
-        { name: "MVC / Client-Server", level: "Advanced", icon: "cpu" },
-        { name: "RESTful API / E-commerce", level: "Advanced", icon: "shopping-cart" },
+        { name: "MongoDB / SQL Server", level: "Advanced", icon: Database },
+        { name: "Vercel / Render / Azure", level: "Advanced", icon: Cloud },
+        { name: "MVC / Client-Server", level: "Advanced", icon: Cpu },
+        { name: "RESTful API / E-commerce", level: "Advanced", icon: ShoppingCart },
       ]
     },
     softSkills: [
-      { name: "Teamwork", icon: "users" },
-      { name: "Communication", icon: "message-square" },
-      { name: "Problem Solving", icon: "lightbulb" },
-      { name: "Agile/Scrum", icon: "refresh-cw" },
+      { name: "Teamwork", icon: Users },
+      { name: "Communication", icon: MessageSquare },
+      { name: "Problem Solving", icon: Lightbulb },
+      { name: "Agile/Scrum", icon: RefreshCw },
     ],
     tools: {
       developer: [
-        { name: "Git / GitHub", icon: "github" },
-        { name: "Postman", icon: "send" },
-        { name: "Vitest", icon: "check-circle" },
-        { name: "Visual Studio / VS Code", icon: "code-2" },
-        { name: "Multer / Nodemailer", icon: "mail" },
+        { name: "Git / GitHub", icon: Github },
+        { name: "Postman", icon: Send },
+        { name: "Vitest", icon: CheckCircle },
+        { name: "Visual Studio / VS Code", icon: Code2 },
+        { name: "Multer / Nodemailer", icon: Mail },
       ],
       design: [
-        { name: "Figma", icon: "figma" },
-        { name: "Canva", icon: "image" },
+        { name: "Figma", icon: Figma },
+        { name: "Canva", icon: ImageIcon },
       ]
     }
   };
 
-  const handleTestimonialSubmit = (e) => {
+  const handleTestimonialSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const newTestimonial = {
@@ -171,13 +168,56 @@ const App = () => {
       role: formData.get('role'),
       message: formData.get('message'),
     };
-    setTestimonials([...testimonials, newTestimonial]);
-    setIsModalOpen(false);
-    e.target.reset();
+
+    try {
+      const response = await fetch(`${API_URL}/testimonials`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newTestimonial)
+      });
+      if (response.ok) {
+        alert("Cảm ơn bạn! Đánh giá đang chờ được duyệt.");
+        setIsModalOpen(false);
+        e.target.reset();
+      }
+    } catch (error) {
+      console.error("Lỗi gửi đánh giá:", error);
+      // Fallback local for demo
+      setTestimonials([...testimonials, newTestimonial]);
+      setIsModalOpen(false);
+      e.target.reset();
+    }
+  };
+
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const contactData = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch(`${API_URL}/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(contactData)
+      });
+      if (response.ok) {
+        alert("Tin nhắn đã được gửi thành công!");
+        e.target.reset();
+      } else {
+        alert("Có lỗi xảy ra, vui lòng thử lại sau.");
+      }
+    } catch (error) {
+      console.error("Lỗi gửi liên hệ:", error);
+      alert("Không thể kết nối với server. Vui lòng thử lại sau.");
+    }
   };
 
   return (
-    <div className="font-inter">
+    <div className="font-inter text-gray-900">
       {/* 100% ORIGINAL HEADER */}
       <header className={`bg-white/80 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -185,34 +225,34 @@ const App = () => {
                 
                 {/* Logo */}
                 <div className="flex items-center gap-2 text-[#1e293b] cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-                    <i data-lucide="code-2" className="w-6 h-6 stroke-[2.5px]"></i>
+                    <Code2 className="w-6 h-6 stroke-[2.5px]" />
                     <span className="text-2xl font-bold tracking-tight">Duy Nguyen<span className="text-indigo-600">.</span></span>
                 </div>
 
                 {/* Navigation Desktop */}
                 <nav className="hidden md:flex items-center space-x-1 lg:space-x-4">
                     <a href="#hero" className={`nav-item flex items-center gap-2 px-5 py-2.5 rounded-lg ${activeNav === 'hero' ? 'bg-[#1e293b] text-white shadow-lg shadow-slate-200' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'}`}>
-                        <i data-lucide="home" className="w-4 h-4"></i>
+                        <Home className="w-4 h-4" />
                         <span className="font-medium text-sm">Home</span>
                     </a>
 
                     <a href="#projects" className={`nav-item flex items-center gap-2 px-4 py-2.5 rounded-lg ${activeNav === 'projects' ? 'bg-[#1e293b] text-white shadow-lg shadow-slate-200' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'}`}>
-                        <i data-lucide="layout" className="w-4 h-4"></i>
+                        <Layout className="w-4 h-4" />
                         <span className="font-medium text-sm">Projects</span>
                     </a>
 
                     <a href="#experience" className={`nav-item flex items-center gap-2 px-4 py-2.5 rounded-lg ${activeNav === 'experience' ? 'bg-[#1e293b] text-white shadow-lg shadow-slate-200' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'}`}>
-                        <i data-lucide="book-open" className="w-4 h-4"></i>
+                        <BookOpen className="w-4 h-4" />
                         <span className="font-medium text-sm">Experience</span>
                     </a>
 
                     <a href="#skills" className={`nav-item flex items-center gap-2 px-4 py-2.5 rounded-lg ${activeNav === 'skills' ? 'bg-[#1e293b] text-white shadow-lg shadow-slate-200' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'}`}>
-                        <i data-lucide="code" className="w-4 h-4"></i>
+                        <Code className="w-4 h-4" />
                         <span className="font-medium text-sm">Skills</span>
                     </a>
 
                     <a href="#contact" className={`nav-item flex items-center gap-2 px-4 py-2.5 rounded-lg ${activeNav === 'contact' ? 'bg-[#1e293b] text-white shadow-lg shadow-slate-200' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'}`}>
-                        <i data-lucide="mail" className="w-4 h-4"></i>
+                        <Mail className="w-4 h-4" />
                         <span className="font-medium text-sm">Contact</span>
                     </a>
                 </nav>
@@ -220,7 +260,7 @@ const App = () => {
                 {/* Actions (Mobile Menu Only) */}
                 <div className="flex items-center md:hidden">
                     <button className="p-2 text-slate-600">
-                        <i data-lucide="menu" className="w-6 h-6"></i>
+                        <Menu className="w-6 h-6" />
                     </button>
                 </div>
             </div>
@@ -231,7 +271,7 @@ const App = () => {
       <section id="hero" className="pt-32 pb-20 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 text-center md:text-left animate-on-scroll animate-slide-up">
-                <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 text-slate-900">
                     Hello, I'm <span className="text-indigo-600">Duy Nguyen</span>
                     <span className="typing-cursor"></span>
                 </h1>
@@ -243,10 +283,10 @@ const App = () => {
                     <span className="text-sm font-bold text-slate-600 uppercase tracking-wider">Follow me on:</span>
                     <div className="flex gap-3">
                         <a href="https://www.facebook.com/nguyen.uc.duy.314512" target="_blank" rel="noopener noreferrer" className="w-11 h-11 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-indigo-600 hover:text-white transition-all duration-300 shadow-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                            <Facebook size={20} />
                         </a>
                         <a href="https://www.instagram.com/lucasdev_01/" target="_blank" rel="noopener noreferrer" className="w-11 h-11 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-indigo-600 hover:text-white transition-all duration-300 shadow-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            <Instagram size={20} />
                         </a>
                     </div>
                 </div>
@@ -258,14 +298,14 @@ const App = () => {
             </div>
             <div className="flex-1 relative animate-on-scroll animate-drop">
                 <div className="w-64 h-64 md:w-80 md:h-80 mx-auto relative z-10">
-                    <img src="assets/image/Duynguyen.png" alt="Duy Nguyen" className="w-full h-full object-cover rounded-3xl shadow-2xl" />
+                    <img src="/assets/image/Duynguyen.png" alt="Duy Nguyen" className="w-full h-full object-cover rounded-3xl shadow-2xl" />
                     <div className="absolute -top-4 -left-4 w-full h-full bg-indigo-50 rounded-3xl -z-10"></div>
                 </div>
                 {/* Floating Icons */}
-                <div className="absolute top-0 right-10 float-1"><img src="assets/icon/reactjs.png" alt="React" className="w-12 h-12" /></div>
-                <div className="absolute bottom-10 left-10 float-2"><img src="assets/icon/js.png" alt="JS" className="w-12 h-12" /></div>
-                <div className="absolute top-20 left-0 float-3"><img src="assets/icon/html.png" alt="HTML" className="w-10 h-10" /></div>
-                <div className="absolute bottom-0 right-0 float-4"><img src="assets/icon/css.png" alt="CSS" className="w-10 h-10" /></div>
+                <div className="absolute top-0 right-10 float-1"><img src="/assets/icon/reactjs.png" alt="React" className="w-12 h-12" /></div>
+                <div className="absolute bottom-10 left-10 float-2"><img src="/assets/icon/js.png" alt="JS" className="w-12 h-12" /></div>
+                <div className="absolute top-20 left-0 float-3"><img src="/assets/icon/html.png" alt="HTML" className="w-10 h-10" /></div>
+                <div className="absolute bottom-0 right-0 float-4"><img src="/assets/icon/css.png" alt="CSS" className="w-10 h-10" /></div>
             </div>
         </div>
       </section>
@@ -313,7 +353,7 @@ const App = () => {
                   <div key={idx} className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 flex flex-col gap-5 transition-all duration-300 hover:shadow-xl">
                     <div className="flex items-start gap-4">
                       <span className="inline-block p-3 bg-gray-100 text-gray-700 rounded-lg">
-                        <i data-lucide={item.icon}></i>
+                        <item.icon size={24} />
                       </span>
                       <div className="flex-1">
                         <h3 className="text-xl font-semibold text-gray-900">{item.title}</h3>
@@ -326,7 +366,7 @@ const App = () => {
                       <ul className="space-y-2">
                         {item.responsibilities.map((res, i) => (
                           <li key={i} className="flex items-start gap-2 text-gray-600">
-                            <i data-lucide="check" className="w-4 h-4 mt-1 text-indigo-600"></i>
+                            <Check className="w-4 h-4 mt-1 text-indigo-600" />
                             <span>{res}</span>
                           </li>
                         ))}
@@ -356,21 +396,21 @@ const App = () => {
                 {/* 1. Technical Skills */}
                 <div className="animate-on-scroll animate-slide-up">
                     <h3 className="text-2xl font-semibold mb-8 flex items-center gap-2">
-                        <i data-lucide="code-2" className="text-indigo-600"></i>
+                        <Code2 className="text-indigo-600" />
                         Technical Skills
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
                         {/* Languages & Frameworks */}
                         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow flex flex-col h-full">
                             <h4 className="font-bold text-lg mb-6 pb-2 border-b border-gray-100 flex items-center gap-2">
-                                <i data-lucide="code" className="w-5 h-5 text-blue-500"></i> Languages & Frameworks
+                                <Code className="w-5 h-5 text-blue-500" /> Languages & Frameworks
                             </h4>
                             <div className="space-y-4 flex-1">
                                 {skillsData.technical.languagesFrameworks.map((skill, idx) => (
                                     <div key={idx} className="flex justify-between items-center group">
                                         <div className="flex items-center gap-3">
                                             <div className="p-2 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                                                <i data-lucide={skill.icon} className="w-4 h-4"></i>
+                                                <skill.icon size={16} />
                                             </div>
                                             <span className="font-medium text-gray-700">{skill.name}</span>
                                         </div>
@@ -383,14 +423,14 @@ const App = () => {
                         {/* Libraries & Security */}
                         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow flex flex-col h-full">
                             <h4 className="font-bold text-lg mb-6 pb-2 border-b border-gray-100 flex items-center gap-2">
-                                <i data-lucide="shield" className="w-5 h-5 text-green-500"></i> Libraries & Security
+                                <Shield className="w-5 h-5 text-green-500" /> Libraries & Security
                             </h4>
                             <div className="space-y-4 flex-1">
                                 {skillsData.technical.librariesSecurity.map((skill, idx) => (
                                     <div key={idx} className="flex justify-between items-center group">
                                         <div className="flex items-center gap-3">
                                             <div className="p-2 bg-green-50 text-green-600 rounded-lg group-hover:bg-green-600 group-hover:text-white transition-colors">
-                                                <i data-lucide={skill.icon} className="w-4 h-4"></i>
+                                                <skill.icon size={16} />
                                             </div>
                                             <span className="font-medium text-gray-700">{skill.name}</span>
                                         </div>
@@ -403,14 +443,14 @@ const App = () => {
                         {/* Database, Cloud & Architecture */}
                         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow flex flex-col h-full">
                             <h4 className="font-bold text-lg mb-6 pb-2 border-b border-gray-100 flex items-center gap-2">
-                                <i data-lucide="database" className="w-5 h-5 text-purple-500"></i> DB, Cloud & Architecture
+                                <Database className="w-5 h-5 text-purple-500" /> DB, Cloud & Architecture
                             </h4>
                             <div className="space-y-4 flex-1">
                                 {skillsData.technical.databaseCloudArch.map((skill, idx) => (
                                     <div key={idx} className="flex justify-between items-center group">
                                         <div className="flex items-center gap-3">
                                             <div className="p-2 bg-purple-50 text-purple-600 rounded-lg group-hover:bg-purple-600 group-hover:text-white transition-colors">
-                                                <i data-lucide={skill.icon} className="w-4 h-4"></i>
+                                                <skill.icon size={16} />
                                             </div>
                                             <span className="font-medium text-gray-700">{skill.name}</span>
                                         </div>
@@ -427,14 +467,14 @@ const App = () => {
                     {/* Soft Skills Section */}
                     <div id="soft-skills-container" className="animate-on-scroll animate-slide-up">
                         <h3 className="text-2xl font-semibold mb-8 flex items-center gap-2">
-                            <i data-lucide="sparkles" className="text-amber-500"></i>
+                            <Sparkles className="text-amber-500" />
                             Soft Skills
                         </h3>
                         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-wrap gap-4">
                             {skillsData.softSkills.map((skill, idx) => (
                                 <div key={idx} className="flex items-center gap-3 bg-gray-50 px-5 py-3 rounded-xl border border-gray-100 hover:border-indigo-200 hover:bg-indigo-50 transition-all group">
                                     <div className="text-gray-500 group-hover:text-indigo-600 transition-colors">
-                                        <i data-lucide={skill.icon} className="w-5 h-5"></i>
+                                        <skill.icon size={20} />
                                     </div>
                                     <span className="font-medium text-gray-700">{skill.name}</span>
                                 </div>
@@ -445,19 +485,19 @@ const App = () => {
                     {/* Tools Section */}
                     <div id="tools-container" className="animate-on-scroll animate-slide-up">
                         <h3 className="text-2xl font-semibold mb-8 flex items-center gap-2">
-                            <i data-lucide="wrench" className="text-slate-600"></i>
+                            <Palette className="text-slate-600" />
                             Professional Tools
                         </h3>
                         <div className="space-y-6">
                             {/* Developer Tools Table */}
                             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                                 <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2 text-sm uppercase tracking-wider">
-                                    <i data-lucide="terminal" className="w-4 h-4"></i> Developer Tools
+                                    <Terminal className="w-4 h-4" /> Developer Tools
                                 </h4>
                                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                                     {skillsData.tools.developer.map((tool, idx) => (
                                         <div key={idx} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                                            <i data-lucide={tool.icon} className="w-4 h-4 text-gray-400"></i>
+                                            <tool.icon size={16} className="text-gray-400" />
                                             <span className="text-sm font-medium text-gray-600">{tool.name}</span>
                                         </div>
                                     ))}
@@ -467,12 +507,12 @@ const App = () => {
                             {/* Design Tools Table */}
                             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                                 <h4 className="font-bold text-gray-800 mb-4 flex items-center gap-2 text-sm uppercase tracking-wider">
-                                    <i data-lucide="palette" className="w-4 h-4"></i> Design Tools
+                                    <Palette className="w-4 h-4" /> Design Tools
                                 </h4>
                                 <div className="grid grid-cols-2 gap-4">
                                     {skillsData.tools.design.map((tool, idx) => (
                                         <div key={idx} className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                                            <i data-lucide={tool.icon} className="w-4 h-4 text-gray-400"></i>
+                                            <tool.icon size={16} className="text-gray-400" />
                                             <span className="text-sm font-medium text-gray-600">{tool.name}</span>
                                         </div>
                                     ))}
@@ -527,7 +567,7 @@ const App = () => {
                     <div className="space-y-6">
                         <div className="flex items-center gap-4">
                             <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
-                                <i data-lucide="mail" className="text-indigo-400"></i>
+                                <Mail className="text-indigo-400" />
                             </div>
                             <div>
                                 <p className="text-sm text-gray-400">Email Me</p>
@@ -536,7 +576,7 @@ const App = () => {
                         </div>
                         <div className="flex items-center gap-4">
                             <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
-                                <i data-lucide="phone" className="text-indigo-400"></i>
+                                <Phone className="text-indigo-400" />
                             </div>
                             <div>
                                 <p className="text-sm text-gray-400">Call Me</p>
@@ -545,7 +585,7 @@ const App = () => {
                         </div>
                         <div className="flex items-center gap-4">
                             <div className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
-                                <i data-lucide="map-pin" className="text-indigo-400"></i>
+                                <MapPin className="text-indigo-400" />
                             </div>
                             <div>
                                 <p className="text-sm text-gray-400">Location</p>
@@ -602,7 +642,7 @@ const App = () => {
               <div className="flex justify-between items-center mb-6">
                   <h3 className="text-2xl font-bold">Leave Feedback</h3>
                   <button onClick={() => setIsModalOpen(false)} className="text-gray-400 hover:text-gray-600">
-                      <i data-lucide="x"></i>
+                      <X />
                   </button>
               </div>
               <form onSubmit={handleTestimonialSubmit} className="space-y-4">
@@ -625,7 +665,7 @@ const App = () => {
 
       {/* Scroll to top button */}
       <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className={`fixed bottom-8 right-8 bg-indigo-600 text-white p-4 rounded-full shadow-2xl hover:bg-indigo-700 transition-all z-40 ${showScrollTop ? '' : 'hidden'}`}>
-          <i data-lucide="chevron-up"></i>
+          <ChevronUp />
       </button>
     </div>
   );
