@@ -79,6 +79,7 @@ const App = () => {
       id: 1, 
       title: "Nexus E-com", 
       category: "fullstack", 
+      image: "/f7c8379f-357e-4a81-b47e-546598664d8c.jpg",
       desc: "A high-performance Full-stack E-commerce platform for the Apple ecosystem featuring AI-driven support and an enterprise admin dashboard.", 
       tags: ["React", "Node.js", "MongoDB", "Gemini API", "Tailwind"],
       link: "https://nexus-ecom-git-main-duyn3630s-projects.vercel.app/"
@@ -87,14 +88,39 @@ const App = () => {
       id: 2, 
       title: "Task API", 
       category: "backend", 
+      image: "https://via.placeholder.com/400x300",
       desc: "Robust RESTful API design following the MVC pattern with JWT authentication and secure endpoints.", 
       tags: ["Node.js", "Express", "MongoDB", "JWT"],
       link: "https://github.com/DUYN3630"
+    },
+    { 
+      id: 3, 
+      title: "Enterprise Asset Management System (EAMS)", 
+      category: "fullstack", 
+      image: "/NeoBroad.jpg",
+      desc: "A scalable system designed to streamline the lifecycle of corporate hardware and software assets, featuring real-time tracking and multi-layered security.", 
+      tags: ["React 19", ".NET 9", "MySQL", "Tailwind CSS", "JWT"],
+      link: "#"
     },
   ];
 
   const experiences = {
     work: [
+      { 
+        icon: Database, 
+        title: "Full-stack Developer", 
+        company: "Enterprise Asset Management System (EAMS)", 
+        date: "May 2026 - Present", 
+        responsibilities: [
+          "Engineered a scalable Enterprise Asset Management System using .NET 9 and React 19, designed to streamline the lifecycle of corporate hardware and software assets.",
+          "Orchestrated a critical database migration from SQL Server/PostgreSQL to MySQL, optimizing infrastructure costs and performance while ensuring 100% data integrity through EF Core Migrations.",
+          "Developed a multi-layered security gateway, integrating JWT-based authentication with a custom-engineered CAPTCHA challenge-response system to mitigate automated brute-force attacks.",
+          "Implemented a real-time Admin Dashboard featuring data visualization for asset status tracking (Available, In-Use, Maintenance, Broken) and automated inventory reporting.",
+          "Architected a modular system using Clean Architecture and the Repository Pattern, facilitating seamless integration of social features like corporate timelines and instant notifications.",
+          "Optimized Frontend-Backend communication by implementing Axios Interceptors for centralized error handling and dynamic JSON serialization (camelCase) to ensure seamless UI rendering."
+        ], 
+        stack: ["React 19", "TypeScript", "Tailwind CSS", "Axios", "Zustand", ".NET 9", "Entity Framework Core", "Pomelo MySQL", "JWT", "Kendo UI", "Lucide Icons", "Chart.js"] 
+      },
       { 
         icon: ShoppingBag, 
         title: "Full-stack Developer", 
@@ -133,7 +159,7 @@ const App = () => {
         { name: "Google Gemini API", level: "Advanced", icon: Sparkles },
       ],
       databaseCloudArch: [
-        { name: "MongoDB / SQL Server", level: "Advanced", icon: Database },
+        { name: "MongoDB / SQL Server / MySQL", level: "Advanced", icon: Database },
         { name: "Vercel / Render / Azure", level: "Advanced", icon: Cloud },
         { name: "MVC / Client-Server", level: "Advanced", icon: Cpu },
         { name: "RESTful API / E-commerce", level: "Advanced", icon: ShoppingCart },
@@ -326,7 +352,7 @@ const App = () => {
                 {projects.filter(p => projectFilter === 'all' || p.category === projectFilter).map(p => (
                   <a key={p.id} href={p.link} target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col transition-all duration-300 hover:-translate-y-2 animate-on-scroll animate-slide-up block">
                       <div className="h-48 bg-gray-200 overflow-hidden">
-                          <img src={p.id === 1 ? "/f7c8379f-357e-4a81-b47e-546598664d8c.jpg" : "https://via.placeholder.com/400x300"} alt={p.title} className="w-full h-full object-cover" />
+                          <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
                       </div>
                       <div className="p-6">
                           <h3 className="text-xl font-bold mb-2">{p.title}</h3>
