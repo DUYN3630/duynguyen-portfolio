@@ -253,12 +253,12 @@ const App = () => {
 
                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                     <a href="#projects" className="bg-gray-900 text-white px-8 py-4 rounded-xl font-medium hover:bg-gray-800 transition-colors shadow-lg shadow-gray-200">View My Work</a>
-                    <a href="/CV NGUYỄN ĐỨC DUY - CV_NguyenDucDuy_EnglishVibes_Intern-TopCV.vn (1).pdf" download className="bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-xl font-medium hover:bg-gray-50 transition-colors shadow-sm">Download CV</a>
+                    <a href="/CV_DuyNguyen.pdf" download className="bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-xl font-medium hover:bg-gray-50 transition-colors shadow-sm">Download CV</a>
                 </div>
             </div>
             <div className="flex-1 relative animate-on-scroll animate-drop">
                 <div className="w-64 h-64 md:w-80 md:h-80 mx-auto relative z-10">
-                    <img src="assets/image/Duynguyen.png" alt="Duy Nguyen" className="w-full h-full object-cover rounded-3xl shadow-2xl" />
+                    <img src="/hinhcv.jpg" alt="Duy Nguyen" className="w-full h-full object-cover rounded-3xl shadow-2xl" />
                     <div className="absolute -top-4 -left-4 w-full h-full bg-indigo-50 rounded-3xl -z-10"></div>
                 </div>
                 {/* Floating Icons */}
