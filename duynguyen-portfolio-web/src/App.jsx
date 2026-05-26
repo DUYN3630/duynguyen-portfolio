@@ -66,8 +66,8 @@ const App = () => {
       id: 1, 
       title: "Nexus E-com", 
       category: "fullstack", 
-      desc: "A high-performance Full-stack E-commerce platform for the Apple ecosystem featuring AI-driven support and an enterprise admin dashboard.", 
-      tags: ["React", "Node.js", "MongoDB", "Gemini API", "Tailwind"],
+      desc: "Full-stack E-commerce platform for Apple ecosystem featuring AI-driven support, real-time dashboard, and secure MoMo QR payments.", 
+      tags: ["React 18", "Node.js", "Express 5", "MongoDB", "Gemini 2.0", "Vitest"],
       link: "https://nexus-ecom-git-main-duyn3630s-projects.vercel.app/"
     },
     { 
@@ -76,7 +76,7 @@ const App = () => {
       category: "backend", 
       desc: "Robust RESTful API design following the MVC pattern with JWT authentication and secure endpoints.", 
       tags: ["Node.js", "Express", "MongoDB", "JWT"],
-      link: "https://github.com/DUYN3630"
+      link: "https://github.com/DUYN3630/nexus-ecom"
     },
   ];
 
@@ -88,15 +88,31 @@ const App = () => {
         company: "Nexus E-com (Personal Project)", 
         date: "Dec 2025 - Present", 
         responsibilities: [
-          "Engineered a high-performance Full-stack E-commerce platform for the Apple ecosystem using React (Vite) and Node.js.",
-          "Developed an enterprise Admin Dashboard with real-time data visualization using Chart.js for revenue and traffic tracking.",
-          "Integrated Google Gemini API to power AI-driven customer support tickets and automated hardware diagnostics.",
-          "Implemented secure RESTful APIs with NoSQL injection protection and advanced workflows like MoMo QR checkout.",
-          "Designed a modular architecture with Redux Toolkit and ensured stability through automated testing with Vitest.",
+          "Full-stack Engineering: Xây dựng nền tảng từ đầu bằng React (Vite) và Node.js.",
+          "Enterprise Dashboard: Phát triển hệ thống quản trị với trực quan hóa dữ liệu thời gian thực (Chart.js).",
+          "AI Integration: Tích hợp Google Gemini API cho chatbot hỗ trợ và chẩn đoán phần cứng tự động.",
+          "Security & Logic: Triển khai bảo vệ NoSQL Injection, xác thực JWT/OAuth và luồng thanh toán MoMo QR.",
+          "Quality Assurance: Đảm bảo độ ổn định hệ thống thông qua Automated Testing với Vitest.",
           "Live Demo: nexus-ecom-git-main-duyn3630s-projects.vercel.app",
           "GitHub: github.com/DUYN3630/nexus-ecom"
         ], 
-        stack: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Redux Toolkit", "Gemini API", "Chart.js", "Vitest"] 
+        stack: ["React 18", "Vite 8", "Redux Toolkit", "Tailwind CSS", "Framer Motion", "Node.js", "Express 5", "Mongoose 9 (MongoDB)", "Gemini 2.0 SDK", "mongo-sanitize", "bcrypt", "Firebase Admin", "Vitest", "Swagger UI", "Multer", "Nodemailer"] 
+      },
+      { 
+        icon: "server", 
+        title: "Backend Developer", 
+        company: "Task API (Personal Project)", 
+        date: "Oct 2025 - Nov 2025", 
+        responsibilities: [
+          "API Architecture: Thiết kế RESTful API chuyên nghiệp theo mô hình MVC (Model-View-Controller).",
+          "Authentication: Triển khai hệ thống xác thực người dùng an toàn với JWT (JSON Web Token).",
+          "Documentation: Tích hợp Swagger UI để cung cấp tài liệu API tương tác và dễ dàng thử nghiệm.",
+          "Database Management: Sử dụng MongoDB và Mongoose để quản lý dữ liệu linh hoạt và hiệu quả.",
+          "Error Handling: Xây dựng hệ thống xử lý lỗi tập trung (Global Error Handling) nâng cao độ ổn định.",
+          "Security: Triển khai các biện pháp bảo vệ ứng dụng chống lại các lỗ hổng bảo mật phổ biến.",
+          "GitHub: github.com/DUYN3630/nexus-ecom"
+        ], 
+        stack: ["Node.js", "Express 5", "MongoDB", "Mongoose 9", "JWT", "Swagger UI", "bcrypt", "Postman"] 
       },
     ],
     organization: []
@@ -107,20 +123,20 @@ const App = () => {
       languagesFrameworks: [
         { name: "JavaScript / HTML / CSS", level: "Advanced", icon: "code" },
         { name: "C#", level: "Advanced", icon: "terminal" },
-        { name: "ReactJS (Vite)", level: "Advanced", icon: "atom" },
-        { name: "Node.js / Express.js", level: "Advanced", icon: "zap" },
+        { name: "React 18 / Vite 8", level: "Advanced", icon: "atom" },
+        { name: "Node.js / Express 5", level: "Advanced", icon: "zap" },
         { name: "ASP.NET Core / MVC", level: "Advanced", icon: "server" },
         { name: "WinForms", level: "Intermediate", icon: "layout" },
       ],
       librariesSecurity: [
-        { name: "Redux Toolkit / Mongoose", level: "Advanced", icon: "box" },
+        { name: "Redux Toolkit / Mongoose 9", level: "Advanced", icon: "box" },
         { name: "Framer Motion / Chart.js", level: "Advanced", icon: "activity" },
         { name: "JWT / OAuth 2.0 / Firebase", level: "Advanced", icon: "lock" },
-        { name: "mongo-sanitize", level: "Advanced", icon: "shield" },
-        { name: "Google Gemini API", level: "Advanced", icon: "sparkles" },
+        { name: "mongo-sanitize / bcrypt", level: "Advanced", icon: "shield" },
+        { name: "Gemini 2.0 SDK", level: "Advanced", icon: "sparkles" },
       ],
       databaseCloudArch: [
-        { name: "MongoDB / SQL Server", level: "Advanced", icon: "database" },
+        { name: "MongoDB / SQL Server / MySQL", level: "Advanced", icon: "database" },
         { name: "Vercel / Render / Azure", level: "Advanced", icon: "cloud" },
         { name: "MVC / Client-Server", level: "Advanced", icon: "cpu" },
         { name: "RESTful API / E-commerce", level: "Advanced", icon: "shopping-cart" },
@@ -135,7 +151,7 @@ const App = () => {
     tools: {
       developer: [
         { name: "Git / GitHub", icon: "github" },
-        { name: "Postman", icon: "send" },
+        { name: "Postman / Swagger UI", icon: "send" },
         { name: "Vitest", icon: "check-circle" },
         { name: "Visual Studio / VS Code", icon: "code-2" },
         { name: "Multer / Nodemailer", icon: "mail" },

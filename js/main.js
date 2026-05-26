@@ -69,15 +69,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     company: "Nexus E-com (Personal Project)", 
                     date: "Dec 2025 - Present", 
                     responsibilities: [
-                        "Engineered a high-performance Full-stack E-commerce platform for the Apple ecosystem using React (Vite) and Node.js.",
-                        "Developed an enterprise Admin Dashboard with real-time data visualization using Chart.js for revenue and traffic tracking.",
-                        "Integrated Google Gemini API to power AI-driven customer support tickets and automated hardware diagnostics.",
-                        "Implemented secure RESTful APIs with NoSQL injection protection and advanced workflows like MoMo QR checkout.",
-                        "Designed a modular architecture with Redux Toolkit and ensured stability through automated testing with Vitest.",
+                        "Full-stack Engineering: Xây dựng nền tảng từ đầu bằng React (Vite) và Node.js.",
+                        "Enterprise Dashboard: Phát triển hệ thống quản trị với trực quan hóa dữ liệu thời gian thực (Chart.js).",
+                        "AI Integration: Tích hợp Google Gemini API cho chatbot hỗ trợ và chẩn đoán phần cứng tự động.",
+                        "Security & Logic: Triển khai bảo vệ NoSQL Injection, xác thực JWT/OAuth và luồng thanh toán MoMo QR.",
+                        "Quality Assurance: Đảm bảo độ ổn định hệ thống thông qua Automated Testing với Vitest.",
                         "Live Demo: nexus-ecom-git-main-duyn3630s-projects.vercel.app",
                         "GitHub: github.com/DUYN3630/nexus-ecom"
                     ], 
-                    stack: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Redux Toolkit", "Gemini API", "Chart.js", "Vitest"] 
+                    stack: ["React 18", "Vite 8", "Redux Toolkit", "Tailwind CSS", "Framer Motion", "Node.js", "Express 5", "Mongoose 9 (MongoDB)", "Gemini 2.0 SDK", "mongo-sanitize", "bcrypt", "Firebase Admin", "Vitest", "Swagger UI", "Multer", "Nodemailer"] 
+                },
+                { 
+                    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6" y1="6" y2="6"/><line x1="6" x2="6" y1="18" y2="18"/></svg>`, 
+                    title: "Backend Developer", 
+                    company: "Task API (Personal Project)", 
+                    date: "Oct 2025 - Nov 2025", 
+                    responsibilities: [
+                        "API Architecture: Thiết kế RESTful API chuyên nghiệp theo mô hình MVC (Model-View-Controller).",
+                        "Authentication: Triển khai hệ thống xác thực người dùng an toàn với JWT (JSON Web Token).",
+                        "Documentation: Tích hợp Swagger UI để cung cấp tài liệu API tương tác và dễ dàng thử nghiệm.",
+                        "Database Management: Sử dụng MongoDB và Mongoose để quản lý dữ liệu linh hoạt và hiệu quả.",
+                        "Error Handling: Xây dựng hệ thống xử lý lỗi tập trung (Global Error Handling) nâng cao độ ổn định.",
+                        "Security: Triển khai các biện pháp bảo vệ ứng dụng chống lại các lỗ hổng bảo mật phổ biến.",
+                        "GitHub: github.com/DUYN3630/nexus-ecom"
+                    ], 
+                    stack: ["Node.js", "Express 5", "MongoDB", "Mongoose 9", "JWT", "Swagger UI", "bcrypt", "Postman"] 
                 },
             ],
             organization: []
@@ -127,26 +143,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const skillsData = {
             frontend: [
                 { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H9l-1 4H4v11h16V6h-4Z"/><path d="M4 11h16"/></svg>`, name: "JavaScript / HTML / CSS", level: "Advanced" },
-                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0-3.12 19.5A10 10 0 0 0 12 22a10 10 0 0 0 3.12-19.5A10 10 0 0 0 12 2z"/><ellipse cx="12" cy="12" rx="4" ry="10" transform="rotate(90 12 12)"/></svg>`, name: "ReactJS (Vite)", level: "Advanced" },
-                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>`, name: "Redux Toolkit / Mongoose", level: "Advanced" },
+                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0-3.12 19.5A10 10 0 0 0 12 22a10 10 0 0 0 3.12-19.5A10 10 0 0 0 12 2z"/><ellipse cx="12" cy="12" rx="4" ry="10" transform="rotate(90 12 12)"/></svg>`, name: "React 18 / Vite 8", level: "Advanced" },
+                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>`, name: "Redux Toolkit / Mongoose 9", level: "Advanced" },
                 { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="m17 5-5-3-5 3"/><path d="m17 19-5 3-5-3"/></svg>`, name: "Framer Motion / Chart.js", level: "Advanced" },
             ],
             backend: [
-                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-3.12 19.5A10 10 0 0 0 12 22a10 10 0 0 0 3.12-19.5A10 10 0 0 0 12 2z"/></svg>`, name: "Node.js / Express.js", level: "Advanced" },
+                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-3.12 19.5A10 10 0 0 0 12 22a10 10 0 0 0 3.12-19.5A10 10 0 0 0 12 2z"/></svg>`, name: "Node.js / Express 5", level: "Advanced" },
                 { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"/><path d="M4 15h16"/><path d="M4 11h16"/><path d="M4 7h16"/></svg>`, name: "ASP.NET Core / MVC", level: "Advanced" },
                 { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>`, name: "C# / WinForms", level: "Advanced" },
                 { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`, name: "JWT / OAuth 2.0 / Firebase", level: "Advanced" },
             ],
             tools: [
                 { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>`, name: "Git / GitHub", level: "Advanced" },
-                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7"/></svg>`, name: "Postman / Vitest", level: "Advanced" },
+                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7"/></svg>`, name: "Postman / Swagger UI", level: "Advanced" },
                 { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>`, name: "Vercel / Render / Azure", level: "Advanced" },
-                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`, name: "Visual Studio / VS Code", level: "Advanced" },
+                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`, name: "Vitest / VS Code", level: "Advanced" },
             ],
             ai: [
-                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>`, name: "Google Gemini API", level: "Advanced" },
-                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`, name: "MVC / Client-Server", level: "Advanced" },
-                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/></svg>`, name: "RESTful API / E-commerce", level: "Advanced" },
+                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/></svg>`, name: "Gemini 2.0 SDK", level: "Advanced" },
+                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`, name: "mongo-sanitize / bcrypt", level: "Advanced" },
+                { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/></svg>`, name: "Multer / Nodemailer", level: "Advanced" },
             ],
             soft: [
                 { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`, name: "Teamwork", level: "Advanced" },
