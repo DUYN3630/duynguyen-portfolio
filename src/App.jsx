@@ -310,7 +310,7 @@ const App = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="hero" className="pt-32 pb-20 px-4">
+      <section id="hero" className="pt-16 pb-20 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div className="flex-1 text-center md:text-left animate-on-scroll animate-slide-up">
                 <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 text-slate-900">
