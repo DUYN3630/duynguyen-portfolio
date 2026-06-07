@@ -68,7 +68,11 @@ const App = () => {
       category: "fullstack", 
       desc: "Full-stack E-commerce platform for Apple ecosystem featuring AI-driven support, real-time dashboard, and secure MoMo QR payments.", 
       tags: ["React 18", "Node.js", "Express 5", "MongoDB", "Gemini 2.0", "Vitest"],
-      link: "https://nexus-ecom-git-main-duyn3630s-projects.vercel.app/"
+      link: "https://nexus-ecom-git-main-duyn3630s-projects.vercel.app/",
+      demoAccounts: [
+        { role: "Admin", user: "admin123@gmail.com", pass: "Asky2605." },
+        { role: "Expert", user: "nhanviensuachua123@gmail.com", pass: "Asky2605." }
+      ]
     },
     { 
       id: 2, 
@@ -290,8 +294,26 @@ const App = () => {
                       </div>
                       <div className="p-6">
                           <h3 className="text-xl font-bold mb-2">{p.title}</h3>
-                          <p className="text-gray-600 mb-4">{p.desc}</p>
-                          <div className="flex gap-2">
+                          <p className="text-gray-600 mb-4 text-sm">{p.desc}</p>
+
+                          {p.demoAccounts && (
+                              <div className="mb-4 p-3 bg-indigo-50/50 rounded-xl border border-indigo-100 ring-1 ring-indigo-200/50 animate-pulse-subtle">
+                                  <p className="text-[10px] font-bold text-indigo-600 uppercase tracking-widest mb-2 flex items-center gap-1">
+                                      <span className="w-1.5 h-1.5 bg-indigo-600 rounded-full animate-pulse"></span>
+                                      Recruiter Demo Access
+                                  </p>
+                                  <div className="space-y-2">
+                                      {p.demoAccounts.map((acc, i) => (
+                                          <div key={i} className="flex flex-col text-xs">
+                                              <span className="font-semibold text-slate-700">{acc.role}:</span>
+                                              <span className="text-indigo-700 font-medium select-all cursor-pointer hover:text-indigo-900" title="Click to select all">{acc.user} / {acc.pass}</span>
+                                          </div>
+                                      ))}
+                                  </div>
+                              </div>
+                          )}
+
+                          <div className="flex flex-wrap gap-2">
                               {p.tags.map(t => <span key={t} className="bg-indigo-50 text-indigo-600 px-3 py-1 rounded-full text-xs font-medium">{t}</span>)}
                           </div>
                       </div>
