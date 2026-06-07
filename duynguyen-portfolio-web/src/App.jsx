@@ -236,7 +236,7 @@ const App = () => {
                     <span className="typing-cursor"></span>
                 </h1>
                 <p className="text-xl text-gray-600 mb-8 max-w-2xl">
-                    I am a web developer with practical experience building full-stack applications using ASP.NET Core and the Node.js/React ecosystem. Dedicated to pursuing a long-term career in software engineering.
+                    As a full-stack developer with expertise in the React and Node.js ecosystems, I aspire to work in a dynamic technology environment to further enhance my system performance optimization skills, expand my software design knowledge, and advance to a Senior Full-stack Developer role within the next three years.
                 </p>
 
                 <div className="flex items-center gap-4 mb-8 justify-center md:justify-start">
