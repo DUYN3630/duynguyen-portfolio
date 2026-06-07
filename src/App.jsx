@@ -335,7 +335,7 @@ const App = () => {
 
                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                     <a href="#projects" className="bg-gray-900 text-white px-8 py-4 rounded-xl font-medium hover:bg-gray-800 transition-colors shadow-lg shadow-gray-200">View My Work</a>
-                    <a href="/CV_DuyNguyen.pdf" download className="bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-xl font-medium hover:bg-gray-50 transition-colors shadow-sm">Download CV</a>
+                    <a href="/Cv-Me/Intern-FullStack-NGUYỄNDỨCDUY2.pdf" download className="bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-xl font-medium hover:bg-gray-50 transition-colors shadow-sm">Download CV</a>
                 </div>
             </div>
             <div className="flex-1 relative animate-on-scroll animate-drop">
