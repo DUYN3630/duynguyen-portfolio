@@ -79,7 +79,7 @@ const App = () => {
       id: 1, 
       title: "Nexus E-com", 
       category: "fullstack", 
-      image: "/f7c8379f-357e-4a81-b47e-546598664d8c.jpg",
+      image: "/NexusProject.jpg",
       desc: "Full-stack E-commerce platform for Apple ecosystem featuring AI-driven support, real-time dashboard, and secure MoMo QR payments.", 
       tags: ["React 18", "Node.js", "Express 5", "MongoDB", "Gemini 2.0", "Vitest"],
       link: "https://nexus-ecom-git-main-duyn3630s-projects.vercel.app/",
@@ -95,16 +95,16 @@ const App = () => {
       image: "/Backendswagger.jpg",
       desc: "Professional RESTful API designed with MVC architecture, featuring integrated Swagger UI for interactive documentation and testing. Includes secure JWT authentication and global error handling.", 
       tags: ["Node.js", "Express", "MongoDB", "Swagger", "JWT"],
-      link: "https://github.com/DUYN3630/nexus-ecom"
+      link: "https://github.com/DUYN3630/duynguyen-portfolio"
     },
     { 
       id: 3, 
       title: "NeoBroad (EAMS)", 
       category: "fullstack", 
-      image: "/NeoBroad.jpg",
+      image: "/NeoBoard.jpg",
       desc: "A scalable Enterprise Asset Management System designed to streamline the lifecycle of corporate hardware and software assets, featuring real-time tracking and multi-layered security.", 
       tags: ["React 19", ".NET 9", "MySQL", "Tailwind CSS", "JWT"],
-      link: "https://github.com/DUYN3630/NeoBroad"
+      link: "https://neo-broad.vercel.app/"
     },
   ];
 
@@ -116,12 +116,12 @@ const App = () => {
         company: "NeoBroad (EAMS)", 
         date: "May 2026 - Present", 
         responsibilities: [
-          "Engineered a scalable Enterprise Asset Management System (NeoBroad) using .NET 9 and React 19, designed to streamline the lifecycle of corporate hardware and software assets.",
-          "Orchestrated a critical database migration from SQL Server/PostgreSQL to MySQL, optimizing infrastructure costs and performance while ensuring 100% data integrity through EF Core Migrations.",
-          "Developed a multi-layered security gateway, integrating JWT-based authentication with a custom-engineered CAPTCHA challenge-response system to mitigate automated brute-force attacks.",
-          "Implemented a real-time Admin Dashboard featuring data visualization for asset status tracking (Available, In-Use, Maintenance, Broken) and automated inventory reporting.",
-          "Architected a modular system using Clean Architecture and the Repository Pattern, facilitating seamless integration of social features like corporate timelines and instant notifications.",
-          "Optimized Frontend-Backend communication by implementing Axios Interceptors for centralized error handling and dynamic JSON serialization (camelCase) to ensure seamless UI rendering."
+          "Engineered a SaaS Enterprise Asset Management System (NeoBoard) utilizing a .NET 9 Web API with Clean Architecture and React 19 (Vite) on the frontend.",
+          "Structured database schemas using Entity Framework Core and MySQL, applying the Repository and Unit of Work patterns for clean data access and separation of concerns.",
+          "Developed a real-time tracking dashboard utilizing SignalR to monitor live asset statuses (Available, In Use, Maintenance, Broken) and broadcast instant notifications.",
+          "Built a mobile-responsive self-service QR-code borrowing flow with HTML5 camera/selfie verification for automated, secure physical asset checkouts in under 30 seconds.",
+          "Implemented an automated proactive maintenance scheduler utilizing .NET Background Worker Services to generate upkeep tickets based on equipment health metrics.",
+          "Secured API endpoints with JWT authentication and optimized client-server communication using Axios Interceptors for centralized error handling, session expiration logic, and camelCase serialization."
         ], 
         stack: ["React 19", "TypeScript", "Tailwind CSS", "Axios", "Zustand", ".NET 9", "Entity Framework Core", "Pomelo MySQL", "JWT", "Kendo UI", "Lucide Icons", "Chart.js"] 
       },
@@ -131,13 +131,13 @@ const App = () => {
         company: "Nexus E-com (Personal Project)", 
         date: "Dec 2025 - Present", 
         responsibilities: [
-          "Full-stack Engineering: Xây dựng nền tảng từ đầu bằng React (Vite) và Node.js.",
-          "Enterprise Dashboard: Phát triển hệ thống quản trị với trực quan hóa dữ liệu thời gian thực (Chart.js).",
-          "AI Integration: Tích hợp Google Gemini API cho chatbot hỗ trợ và chẩn đoán phần cứng tự động.",
-          "Security & Logic: Triển khai bảo vệ NoSQL Injection, xác thực JWT/OAuth và luồng thanh toán MoMo QR.",
-          "Quality Assurance: Đảm bảo độ ổn định hệ thống thông qua Automated Testing với Vitest.",
-          "Live Demo: nexus-ecom-git-main-duyn3630s-projects.vercel.app",
-          "GitHub: github.com/DUYN3630/nexus-ecom"
+          "Architected an AI-powered Apple e-commerce and IT Service Hub ecosystem using the MERN stack (React, Node.js, Express, MongoDB) with Redux Toolkit for state management.",
+          "Engineered an intelligent, multi-agent AI assistant utilizing the Google Gemini API (Gemini SDK) with advanced prompt engineering to automate sales support and diagnose hardware issues.",
+          "Developed a custom AI Hub dashboard allowing admins to dynamically switch LLM models (gemini-2.0-flash, gemini-flash-latest) and update system instructions in real-time.",
+          "Implemented real-time bidirectional messaging via Socket.io to connect customers with hardware experts for repair ticketing and consultation.",
+          "Designed a high-fidelity frontend with custom 3D-like experiences using Framer Motion and visualized sales/revenue analytics with Chart.js.",
+          "Secured backend APIs using Role-Based Access Control (RBAC), JWT token rotation, Google OAuth, Firebase Admin, and mongo-sanitize to prevent NoSQL injections.",
+          "Ensured reliability and high code quality by conducting unit/integration testing using Vitest."
         ], 
         stack: ["React 18", "Vite 8", "Redux Toolkit", "Tailwind CSS", "Framer Motion", "Node.js", "Express 5", "Mongoose 9 (MongoDB)", "Gemini 2.0 SDK", "mongo-sanitize", "bcrypt", "Firebase Admin", "Vitest", "Swagger UI", "Multer", "Nodemailer"] 
       },
@@ -147,13 +147,11 @@ const App = () => {
         company: "Task API (Personal Project)", 
         date: "Oct 2025 - Nov 2025", 
         responsibilities: [
-          "API Architecture: Thiết kế RESTful API chuyên nghiệp theo mô hình MVC (Model-View-Controller).",
-          "Authentication: Triển khai hệ thống xác thực người dùng an toàn với JWT (JSON Web Token).",
-          "Documentation: Tích hợp Swagger UI để cung cấp tài liệu API tương tác và dễ dàng thử nghiệm.",
-          "Database Management: Sử dụng MongoDB và Mongoose để quản lý dữ liệu linh hoạt và hiệu quả.",
-          "Error Handling: Xây dựng hệ thống xử lý lỗi tập trung (Global Error Handling) nâng cao độ ổn định.",
-          "Security: Triển khai các biện pháp bảo vệ ứng dụng chống lại các lỗ hổng bảo mật phổ biến.",
-          "GitHub: github.com/DUYN3630/nexus-ecom"
+          "Designed and built a high-performance RESTful API using Node.js, Express, and MongoDB (Mongoose ODM) following the MVC architectural pattern.",
+          "Implemented secure user authentication and authorization using JSON Web Tokens (JWT) and passwords encrypted with bcrypt.",
+          "Integrated interactive API documentation and sandbox testing interfaces using Swagger UI.",
+          "Constructed a robust global error handling middleware to sanitize error responses and maintain system uptime.",
+          "Ensured database efficiency by designing clean Mongoose schemas and applying data validation rules at API boundaries."
         ], 
         stack: ["Node.js", "Express 5", "MongoDB", "Mongoose 9", "JWT", "Swagger UI", "bcrypt", "Postman"] 
       },
@@ -164,39 +162,42 @@ const App = () => {
   const skillsData = {
     technical: {
       languagesFrameworks: [
-        { name: "JavaScript / HTML / CSS", level: "Advanced", icon: Code },
-        { name: "C#", level: "Advanced", icon: Terminal },
-        { name: "React 18 / Vite 8", level: "Advanced", icon: Atom },
-        { name: "Node.js / Express 5", level: "Advanced", icon: Zap },
-        { name: "ASP.NET Core / MVC", level: "Advanced", icon: Server },
-        { name: "WinForms", level: "Intermediate", icon: Layout },
+        { name: "C# (.NET 9 / C# 13)", level: "Advanced", icon: Terminal },
+        { name: "TypeScript / JavaScript", level: "Advanced", icon: Code },
+        { name: "React 18 & 19 / Vite / Zustand", level: "Advanced", icon: Atom },
+        { name: "ASP.NET Core Web API / MVC", level: "Advanced", icon: Server },
+        { name: "Node.js / Express.js", level: "Advanced", icon: Zap },
+        { name: "HTML5 / CSS3 / Tailwind CSS", level: "Advanced", icon: Layout },
       ],
       librariesSecurity: [
-        { name: "Redux Toolkit / Mongoose 9", level: "Advanced", icon: Box },
-        { name: "Framer Motion / Chart.js", level: "Advanced", icon: Activity },
-        { name: "JWT / OAuth 2.0 / Firebase", level: "Advanced", icon: Lock },
+        { name: "React Query / Axios Interceptors", level: "Advanced", icon: Box },
+        { name: "SignalR (Real-time Hubs)", level: "Advanced", icon: Activity },
+        { name: "JWT / Google OAuth / Firebase Admin", level: "Advanced", icon: Lock },
         { name: "mongo-sanitize / bcrypt", level: "Advanced", icon: Shield },
-        { name: "Gemini 2.0 SDK", level: "Advanced", icon: Sparkles },
+        { name: "Gemini & Claude AI / LLM Prompting", level: "Advanced", icon: Sparkles },
       ],
       databaseCloudArch: [
-        { name: "MongoDB / SQL Server / MySQL", level: "Advanced", icon: Database },
-        { name: "Vercel / Render / Azure", level: "Advanced", icon: Cloud },
-        { name: "MVC / Client-Server", level: "Advanced", icon: Cpu },
-        { name: "RESTful API / E-commerce", level: "Advanced", icon: ShoppingCart },
+        { name: "MySQL / MongoDB / SQL Server", level: "Advanced", icon: Database },
+        { name: "Clean Architecture / Repository / UoW", level: "Advanced", icon: Cpu },
+        { name: "Docker Containerization", level: "Advanced", icon: Box },
+        { name: "Vercel / Render Cloud Deployment", level: "Advanced", icon: Cloud },
+        { name: "RESTful API / E-commerce SaaS", level: "Advanced", icon: ShoppingCart },
       ]
     },
     softSkills: [
-      { name: "Teamwork", icon: Users },
-      { name: "Communication", icon: MessageSquare },
-      { name: "Problem Solving", icon: Lightbulb },
-      { name: "Agile/Scrum", icon: RefreshCw },
+      { name: "Teamwork & Collaboration", icon: Users },
+      { name: "Problem Solving & Debugging", icon: Lightbulb },
+      { name: "Agile / Scrum Methodology", icon: RefreshCw },
+      { name: "Effective Communication", icon: MessageSquare },
     ],
     tools: {
       developer: [
-        { name: "Git / GitHub", icon: Github },
+        { name: "Antigravity AI Agent", icon: Sparkles },
+        { name: "Git / GitHub / Version Control", icon: Github },
         { name: "Postman / Swagger UI", icon: Send },
-        { name: "Vitest", icon: CheckCircle },
+        { name: "Docker / Docker Desktop", icon: Box },
         { name: "Visual Studio / VS Code", icon: Code2 },
+        { name: "Vitest / Automated Testing", icon: CheckCircle },
         { name: "Multer / Nodemailer", icon: Mail },
       ],
       design: [
@@ -368,9 +369,9 @@ const App = () => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-on-scroll animate-slide-up">
                 {projects.filter(p => projectFilter === 'all' || p.category === projectFilter).map(p => (
-                  <a key={p.id} href={p.link} target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col transition-all duration-300 hover:-translate-y-2 animate-on-scroll animate-slide-up block">
+                  <a key={p.id} href={p.link} target="_blank" rel="noopener noreferrer" className="project-card bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 flex flex-col transition-all duration-300 hover:-translate-y-2 block">
                       <div className="h-48 bg-gray-200 overflow-hidden">
                           <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
                       </div>
