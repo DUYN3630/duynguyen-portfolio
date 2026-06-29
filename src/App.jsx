@@ -104,7 +104,12 @@ const App = () => {
       image: "/NeoBoard.jpg",
       desc: "A scalable Enterprise Asset Management System designed to streamline the lifecycle of corporate hardware and software assets, featuring real-time tracking and multi-layered security.", 
       tags: ["React 19", ".NET 9", "MySQL", "Tailwind CSS", "JWT"],
-      link: "https://neo-broad.vercel.app/"
+      link: "https://neo-broad.vercel.app/",
+      demoAccounts: [
+        { role: "Admin", user: "admin@ams.com", pass: "Asky2605.", phone: "0971610978", sms: "123456" },
+        { role: "Staff", user: "staff@ams.com", pass: "Asky2605.", phone: "0971610978", sms: "123456" },
+        { role: "Student", user: "sv1001@student.edu.vn", pass: "Asky2605.", phone: "0971610978", sms: "123456" }
+      ]
     },
   ];
 
@@ -340,7 +345,7 @@ const App = () => {
 
                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                     <a href="#projects" className="bg-gray-900 text-white px-8 py-4 rounded-xl font-medium hover:bg-gray-800 transition-colors shadow-lg shadow-gray-200">View My Work</a>
-                    <a href="/Cv-Me/Intern-FullStack-NGUYỄNDỨCDUY2.pdf" download className="bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-xl font-medium hover:bg-gray-50 transition-colors shadow-sm">Download CV</a>
+                    <a href="/Cv-Me/CV Nguyen Duc Duy - Full-Stack Developer.pdf" download className="bg-white text-gray-900 border border-gray-200 px-8 py-4 rounded-xl font-medium hover:bg-gray-50 transition-colors shadow-sm">Download CV</a>
                 </div>
             </div>
             <div className="flex-1 relative animate-on-scroll animate-drop">
@@ -387,9 +392,14 @@ const App = () => {
                                   </p>
                                   <div className="space-y-2">
                                       {p.demoAccounts.map((acc, i) => (
-                                          <div key={i} className="flex flex-col text-xs">
+                                          <div key={i} className="flex flex-col text-xs border-b border-indigo-100/50 pb-2 last:border-0 last:pb-0">
                                               <span className="font-semibold text-slate-700">{acc.role}:</span>
-                                              <span className="text-indigo-700 font-medium select-all cursor-pointer hover:text-indigo-900" title="Click to select all">{acc.user} / {acc.pass}</span>
+                                              <span className="text-indigo-700 font-medium select-all cursor-pointer hover:text-indigo-900 mb-0.5" title="Click to select all">{acc.user} / {acc.pass}</span>
+                                              {acc.phone && (
+                                                  <span className="text-[10px] text-gray-500 mt-0.5 font-normal">
+                                                      Phone: <span className="font-medium text-slate-700 select-all">{acc.phone}</span> | SMS: <span className="font-medium text-slate-700 select-all">{acc.sms}</span>
+                                                  </span>
+                                              )}
                                           </div>
                                       ))}
                                   </div>
