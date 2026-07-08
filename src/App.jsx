@@ -99,12 +99,12 @@ const App = () => {
     },
     { 
       id: 3, 
-      title: "NeoBroad (EAMS)", 
+      title: "NeoBoard (EAMS)", 
       category: "fullstack", 
       image: "/NeoBoard.jpg",
       desc: "A scalable Enterprise Asset Management System designed to streamline the lifecycle of corporate hardware and software assets, featuring real-time tracking and multi-layered security.", 
       tags: ["React 19", ".NET 9", "MySQL", "Tailwind CSS", "JWT"],
-      link: "https://neo-broad.vercel.app/",
+      link: "https://neo-board.vercel.app/",
       demoAccounts: [
         { role: "Admin", user: "admin@ams.com", pass: "Asky2605.", phone: "0971610978", sms: "123456" },
         { role: "Staff", user: "staff@ams.com", pass: "Asky2605.", phone: "0971610978", sms: "123456" },
@@ -118,7 +118,7 @@ const App = () => {
       { 
         icon: Database, 
         title: "Full-stack Developer", 
-        company: "NeoBroad (EAMS)", 
+        company: "NeoBoard (EAMS)", 
         date: "May 2026 - Present", 
         responsibilities: [
           "Engineered a SaaS Enterprise Asset Management System (NeoBoard) utilizing a .NET 9 Web API with Clean Architecture and React 19 (Vite) on the frontend.",
@@ -264,7 +264,14 @@ const App = () => {
       }
     } catch (error) {
       console.error("Lỗi gửi liên hệ:", error);
-      alert("Không thể kết nối với server. Vui lòng thử lại sau.");
+      // Fallback: Mở trình gửi email (Mail Client) mặc định nếu không kết nối được backend
+      const subject = encodeURIComponent(`Liên hệ từ Portfolio - ${contactData.name}`);
+      const body = encodeURIComponent(`Chào Duy,\n\n${contactData.message}\n\n---\nNgười gửi: ${contactData.name}\nEmail liên hệ: ${contactData.email}`);
+      const mailtoUrl = `mailto:duyn3630@gmail.com?subject=${subject}&body=${body}`;
+      
+      window.location.href = mailtoUrl;
+      alert("Không thể kết nối với server. Trình gửi thư mặc định (Email) đã được mở để gửi tin nhắn!");
+      e.target.reset();
     }
   };
 
